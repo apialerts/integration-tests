@@ -15,12 +15,12 @@ jobs:
           ref: feature/1.3.0
       - uses: actions/setup-go@v6
         with:
-          go-version: '1.22'
+          go-version-file: 'go.mod'
       - run: go build -o apialerts .
       - run: ./apialerts send --key $APIALERTS_API_KEY -m "CLI - minimal"
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
-      - run: ./apialerts send --key $APIALERTS_API_KEY -m "CLI - full" -e "sdk.test" -t "Integration Test" -c "developer" -g "CI/CD,CLI" -l "https://github.com/apialerts/cli/actions"
+      - run: ./apialerts send --key $APIALERTS_API_KEY -m "CLI - full" -e "sdk.test" -t "Integration Test" -c "testing" -g "CI/CD,CLI" -l "https://github.com/apialerts/cli/actions"
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -35,7 +35,7 @@ jobs:
       - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '8.0'
-      - run: dotnet run --project sample
+      - run: dotnet run --project sample/ApiAlerts.Sample.csproj -- --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -49,7 +49,7 @@ jobs:
           ref: feature/2.0.0
       - uses: dart-lang/setup-dart@v1
       - run: dart pub get
-      - run: dart run sample/run.dart
+      - run: dart run sample/run.dart --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -63,8 +63,8 @@ jobs:
           ref: feature/2.0.0
       - uses: actions/setup-go@v6
         with:
-          go-version: '1.22'
-      - run: go run sample/github.go
+          go-version-file: 'go.mod'
+      - run: go run sample/github.go --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -83,7 +83,7 @@ jobs:
           mv Godot_v4.3-stable_linux.x86_64 godot
           chmod +x godot
       - name: Run sample
-        run: ./godot --headless --path . --script sample/sample.gd
+        run: ./godot --headless --path . --script sample/sample.gd -- --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -99,7 +99,7 @@ jobs:
         with:
           node-version: '22'
       - run: npm install --legacy-peer-deps
-      - run: npx tsx sample/run.ts
+      - run: npx tsx sample/run.ts --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -115,7 +115,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      - run: ./gradlew :sample:run
+      - run: ./gradlew :sample:run --args='--integration-tests --channel testing'
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -131,7 +131,7 @@ jobs:
         with:
           php-version: '8.3'
       - run: composer install --no-interaction
-      - run: php sample/run.php
+      - run: php sample/run.php --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -147,7 +147,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install .
-      - run: python sample/run.py
+      - run: python sample/run.py --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -163,7 +163,7 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true
-      - run: ruby sample/run.rb
+      - run: ruby sample/run.rb --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -176,7 +176,7 @@ jobs:
           repository: apialerts/apialerts-rust
           ref: feature/2.0.0
       - uses: dtolnay/rust-toolchain@stable
-      - run: cargo run --example run
+      - run: cargo run --example run -- --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
 
@@ -188,6 +188,6 @@ jobs:
         with:
           repository: apialerts/apialerts-swift
           ref: feature/2.0.0
-      - run: swift run --package-path sample
+      - run: swift run --package-path sample -- --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
