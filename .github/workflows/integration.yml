@@ -99,6 +99,7 @@ jobs:
         with:
           node-version: '22'
       - run: npm install --legacy-peer-deps
+      - run: npm run build
       - run: npx tsx sample/run.ts --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
