@@ -190,6 +190,6 @@ jobs:
           repository: apialerts/apialerts-swift
           ref: feature/1.2.0
           path: APIAlerts
-      - run: swift run --package-path APIAlerts/sample -- --integration-tests --channel testing
+      - run: swift run --package-path APIAlerts/sample sample --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
