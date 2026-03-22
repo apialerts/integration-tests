@@ -12,8 +12,7 @@ Each sample sends two events:
 
 ## Triggers
 
-- **Nightly** — 2am UTC via cron
-- **Manual** — `workflow_dispatch`, run before any coordinated v2.0 release
+- **Manual** — `workflow_dispatch`, run before any coordinated release
 
 ## Secret required
 
@@ -29,14 +28,16 @@ Each sample sends two events:
 
 | SDK | Sample ready | Job active |
 |-----|-------------|------------|
-| Go | ✅ | ✅ |
-| PHP | ✅ | ✅ |
-| JS | ✅ | ✅ |
-| Python | ✅ | ✅ |
-| Kotlin | ✅ | ✅ |
-| Swift | ✅ | ✅ |
 | C# | ✅ | ✅ |
-| Rust | ✅ | ✅ |
+| CLI | ✅ | ✅ |
 | Dart | ✅ | ✅ |
+| Go | ✅ | ✅ |
+| Godot | ✅ | ✅ |
+| JS | ✅ | ✅ |
+| Kotlin | ✅ | ✅ |
+| Notify Action | ✅ | ✅ |
+| PHP | ✅ | ✅ |
+| Python | ✅ | ✅ |
 | Ruby | ✅ | ✅ |
-| Godot | ❌ | ❌ |
+| Rust | ✅ | ✅ |
+| Swift | ✅ | ✅ |
