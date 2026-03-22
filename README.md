@@ -28,16 +28,16 @@ Each sample sends two events:
 
 | SDK | Sample ready | Job active |
 |-----|-------------|------------|
-| C# | ✅ | ✅ |
-| CLI | ✅ | ✅ |
-| Dart | ✅ | ✅ |
-| Go | ✅ | ✅ |
-| Godot | ✅ | ✅ |
-| JS | ✅ | ✅ |
-| Kotlin | ✅ | ✅ |
-| Notify Action | ✅ | ✅ |
-| PHP | ✅ | ✅ |
-| Python | ✅ | ✅ |
-| Ruby | ✅ | ✅ |
-| Rust | ✅ | ✅ |
-| Swift | ✅ | ✅ |
+| [C#](https://github.com/apialerts/apialerts-csharp) | ✅ | ✅ |
+| [CLI](https://github.com/apialerts/cli) | ✅ | ✅ |
+| [Dart](https://github.com/apialerts/apialerts-dart) | ✅ | ✅ |
+| [Go](https://github.com/apialerts/apialerts-go) | ✅ | ✅ |
+| [Godot](https://github.com/apialerts/apialerts-godot) | ✅ | ✅ |
+| [JS](https://github.com/apialerts/apialerts-js) | ✅ | ✅ |
+| [Kotlin](https://github.com/apialerts/apialerts-kotlin) | ✅ | ✅ |
+| [Notify Action](https://github.com/apialerts/notify-action) | ✅ | ✅ |
+| [PHP](https://github.com/apialerts/apialerts-php) | ✅ | ✅ |
+| [Python](https://github.com/apialerts/apialerts-python) | ✅ | ✅ |
+| [Ruby](https://github.com/apialerts/apialerts-ruby) | ✅ | ✅ |
+| [Rust](https://github.com/apialerts/apialerts-rust) | ✅ | ✅ |
+| [Swift](https://github.com/apialerts/apialerts-swift) | ✅ | ✅ |
