@@ -1,0 +1,53 @@
+name: Published Package Smoke Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  go:
+    name: Go (published)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version: 'stable'
+      - run: go run .
+        env:
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+
+  js:
+    name: JS (published)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: js
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: npm ci
+      - run: node index.js
+        env:
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+
+  python:
+    name: Python (published)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python run.py
+        env:
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}

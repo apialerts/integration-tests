@@ -1,0 +1,9 @@
+{
+  "name": "apialerts-smoke",
+  "private": true,
+  "type": "module",
+  "description": "Smoke test that installs the published `apialerts` npm package and sends one event.",
+  "dependencies": {
+    "apialerts": "1.3.2"
+  }
+}
