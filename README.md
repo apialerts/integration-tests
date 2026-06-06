@@ -29,7 +29,7 @@ The workflow just installs what the manifest declares and runs it - no `@latest`
 
 ## Secret required
 
-`APIALERTS_TEST_API_KEY` — API key for a dedicated test workspace. Set in this repo's GitHub Actions secrets.
+`APIALERTS_API_KEY` — API key for a dedicated test workspace. Set in this repo's GitHub Actions secrets.
 
 ## Adding a new SDK
 

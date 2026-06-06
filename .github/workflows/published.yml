@@ -18,7 +18,7 @@ jobs:
           go-version: 'stable'
       - run: go run .
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   js:
     name: JS (published)
@@ -34,7 +34,7 @@ jobs:
       - run: npm ci
       - run: node index.js
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   python:
     name: Python (published)
@@ -50,4 +50,4 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python run.py
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}

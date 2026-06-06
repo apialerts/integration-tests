@@ -19,7 +19,7 @@ jobs:
       - run: npm install --legacy-peer-deps
       - run: npx tsx sample/run.ts --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   cli:
     name: CLI
@@ -35,13 +35,13 @@ jobs:
       - run: go build -o apialerts .
       - run: ./apialerts send -m "CLI - minimal"
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
       - run: ./apialerts send -m "CLI - full" -e "ci.sdk.integration.cli" -t "Integration Test" -c "testing" -g "CI/CD,CLI" -l "https://github.com/apialerts/cli/actions"
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
       - run: ./apialerts send --json -m "CLI - json"
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   cli-npm:
     name: CLI (npm)
@@ -53,10 +53,10 @@ jobs:
       - run: npx --yes @apialerts/cli@latest --version
       - run: npx --yes @apialerts/cli@latest send -m "CLI npm - minimal"
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
       - run: npx --yes @apialerts/cli@latest send --json -m "CLI npm - json" -c testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   csharp:
     name: C# SDK
@@ -71,7 +71,7 @@ jobs:
           dotnet-version: '8.0'
       - run: dotnet run --project sample/ApiAlerts.Sample.csproj -- --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   dart:
     name: Dart SDK
@@ -85,7 +85,7 @@ jobs:
       - run: dart pub get
       - run: dart run example/run.dart --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   go:
     name: Go SDK
@@ -100,7 +100,7 @@ jobs:
           go-version-file: 'go.mod'
       - run: go run sample/github.go --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   godot:
     name: Godot SDK
@@ -119,7 +119,7 @@ jobs:
       - name: Run sample
         run: ./godot --headless --path . --script sample/sample.gd -- --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   js:
     name: JS SDK
@@ -136,7 +136,7 @@ jobs:
       - run: npm run build
       - run: npx tsx sample/run.ts --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   kotlin:
     name: Kotlin SDK
@@ -152,7 +152,7 @@ jobs:
           distribution: 'temurin'
       - run: ./gradlew :sample:run --args='--integration-tests --channel testing'
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   php:
     name: PHP SDK
@@ -168,7 +168,7 @@ jobs:
       - run: composer install --no-interaction
       - run: php sample/run.php --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   python:
     name: Python SDK
@@ -184,7 +184,7 @@ jobs:
       - run: pip install .
       - run: python sample/run.py --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   ruby:
     name: Ruby SDK
@@ -200,7 +200,7 @@ jobs:
           bundler-cache: true
       - run: ruby sample/run.rb --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   rust:
     name: Rust SDK
@@ -213,7 +213,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - run: cargo run --example run -- --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
   swift:
     name: Swift SDK
@@ -226,4 +226,4 @@ jobs:
           path: APIAlerts
       - run: swift run --package-path APIAlerts/sample sample --integration-tests --channel testing
         env:
-          APIALERTS_API_KEY: ${{ secrets.APIALERTS_TEST_API_KEY }}
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}

@@ -1,4 +1,4 @@
-import { createRequire } from 'node:module'
+import { readFileSync } from 'node:fs'
 import { ApiAlerts } from 'apialerts'
 
 const apiKey = process.env.APIALERTS_API_KEY ?? ''
@@ -9,6 +9,9 @@ if (!apiKey) {
 
 const require = createRequire(import.meta.url)
 const version = require('apialerts/package.json').version
+const version = JSON.parse(
+    readFileSync(new URL('./node_modules/apialerts/package.json', import.meta.url), 'utf8'),
+).version
 
 ApiAlerts.configure(apiKey)
 
