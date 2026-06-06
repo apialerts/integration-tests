@@ -38,8 +38,7 @@ func main() {
 	fmt.Printf("OK: go %s sent to %s (%s)\n", version, result.Workspace, result.Channel)
 }
 
-// resolvedVersion reads the apialerts-go version that was actually resolved into
-// this build, so the alert reports the exact published version under test.
+// resolvedVersion returns the apialerts-go version resolved into this build.
 func resolvedVersion() string {
 	info, ok := debug.ReadBuildInfo()
 	if !ok {
