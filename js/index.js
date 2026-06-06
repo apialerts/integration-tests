@@ -7,8 +7,6 @@ if (!apiKey) {
     process.exit(1)
 }
 
-const require = createRequire(import.meta.url)
-const version = require('apialerts/package.json').version
 const version = JSON.parse(
     readFileSync(new URL('./node_modules/apialerts/package.json', import.meta.url), 'utf8'),
 ).version
