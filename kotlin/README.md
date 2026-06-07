@@ -6,7 +6,7 @@ Central. Sends one event, proving the artifact resolves and is usable.
 ## Install (Gradle)
 
 ```kotlin
-implementation("com.apialerts:client:1.1.0-alpha04")
+implementation("com.apialerts:client:1.1.0")
 ```
 
 ## Run

@@ -8,7 +8,7 @@ repositories {
 }
 
 // Published version under test. Bump on release.
-val sdkVersion = "1.1.0-alpha04"
+val sdkVersion = "1.1.0"
 
 dependencies {
     implementation("com.apialerts:client:$sdkVersion")
