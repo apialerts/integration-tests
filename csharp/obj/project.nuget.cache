@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ca64eogMlFg=",
+  "success": true,
+  "projectFilePath": "/Users/mononz/Code/apialerts/integrations/integration-tests/csharp/Smoke.csproj",
+  "expectedPackageFiles": [
+    "/Users/mononz/.nuget/packages/apialerts/1.0.0-alpha3/apialerts.1.0.0-alpha3.nupkg.sha512"
+  ],
+  "logs": []
+}

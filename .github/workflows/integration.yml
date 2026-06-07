@@ -68,7 +68,9 @@ jobs:
           ref: feature/1.0.0
       - uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '8.0'
+          dotnet-version: |
+            8.0.x
+            10.0.x
       - run: dotnet run --project sample/ApiAlerts.Sample.csproj -- --integration-tests --channel testing
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}

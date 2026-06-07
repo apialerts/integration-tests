@@ -1,0 +1,6 @@
+/Users/mononz/Code/apialerts/integrations/integration-tests/csharp/obj/Debug/net8.0/Smoke.csproj.AssemblyReference.cache
+/Users/mononz/Code/apialerts/integrations/integration-tests/csharp/obj/Debug/net8.0/Smoke.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mononz/Code/apialerts/integrations/integration-tests/csharp/obj/Debug/net8.0/Smoke.AssemblyInfoInputs.cache
+/Users/mononz/Code/apialerts/integrations/integration-tests/csharp/obj/Debug/net8.0/Smoke.AssemblyInfo.cs
+/Users/mononz/Code/apialerts/integrations/integration-tests/csharp/obj/Debug/net8.0/Smoke.csproj.CoreCompileInputs.cache
+/Users/mononz/Code/apialerts/integrations/integration-tests/csharp/obj/Debug/net8.0/Smoke.sourcelink.json

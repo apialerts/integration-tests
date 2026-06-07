@@ -84,3 +84,18 @@ jobs:
       - run: ./gradlew run --console=plain
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
+
+  csharp:
+    name: C# (published)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: csharp
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '8.0'
+      - run: dotnet run
+        env:
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}

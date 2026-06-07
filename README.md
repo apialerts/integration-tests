@@ -21,7 +21,7 @@ Each sample sends two events:
 
 A tiny self-contained consumer lives in `<language>/` (e.g. `go/`, `js/`, `python/`). Each one pins a dependency on a **published** version in its own manifest (`package.json` / `go.mod` / `requirements.txt`) - never a local path - installs it, and sends one event whose payload carries the language and the resolved package version, so the alerts read "Published smoke - Go v1.2.0" at a glance. Each folder has a README with its install command.
 
-The workflow just installs what the manifest declares and runs it - no `@latest` upgrade step, so it works uniformly across ecosystems (npm, Go proxy, PyPI, and later Gradle, SwiftPM, etc., which have no clean CLI upgrade). On release you bump the pinned version in the relevant manifest and dispatch the workflow to confirm that exact published version works. Live languages so far: **Go, JS, Python**.
+The workflow just installs what the manifest declares and runs it - no `@latest` upgrade step, so it works uniformly across ecosystems (npm, Go proxy, PyPI, and later Gradle, SwiftPM, etc., which have no clean CLI upgrade). On release you bump the pinned version in the relevant manifest and dispatch the workflow to confirm that exact published version works. Live languages so far: **Go, JS, Python, Kotlin, Java**. C# is wired up but pending its first stable NuGet publish (only old `1.0.0-alphaN` builds exist today).
 
 ## Triggers
 
