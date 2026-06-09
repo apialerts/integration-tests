@@ -99,3 +99,15 @@ jobs:
       - run: dotnet run
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
+
+  swift:
+    name: Swift (published)
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: swift
+    steps:
+      - uses: actions/checkout@v6
+      - run: swift run
+        env:
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}

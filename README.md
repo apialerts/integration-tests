@@ -25,7 +25,7 @@ The workflow just installs what the manifest declares and runs it - no `@latest`
 
 ## Triggers
 
-- **Manual** — `workflow_dispatch` on either workflow, run before (source) or after (published) a coordinated release. Bump the pinned version in the `<lang>/` manifest first, then dispatch the published workflow.
+- **Manual** - `workflow_dispatch` on either workflow, run before (source) or after (published) a coordinated release. Bump the pinned version in the `<lang>/` manifest first, then dispatch the published workflow.
 
 ## Secret required
 
