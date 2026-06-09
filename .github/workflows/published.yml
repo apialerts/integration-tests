@@ -100,6 +100,19 @@ jobs:
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
 
+  rust:
+    name: Rust (published)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rust
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo run
+        env:
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
+
   swift:
     name: Swift (published)
     runs-on: macos-latest

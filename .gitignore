@@ -5,3 +5,7 @@ __pycache__/
 .idea
 .gradle/
 build/
+target/
+.build/
+.swiftpm/
+Package.resolved
