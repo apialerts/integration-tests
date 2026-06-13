@@ -1,0 +1,10 @@
+name: apialerts_published_smoke
+description: Smoke test that installs the published apialerts package and sends one event.
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  apialerts: 1.0.0
