@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+# Pinned to the version under test. Bump on each release.
+gem 'apialerts', '1.0.0'
