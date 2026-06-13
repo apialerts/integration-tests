@@ -9,3 +9,4 @@ target/
 .build/
 .swiftpm/
 Package.resolved
+vendor/

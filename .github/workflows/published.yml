@@ -124,3 +124,19 @@ jobs:
       - run: swift run
         env:
           APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}
+
+  php:
+    name: PHP (published)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: php
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - run: composer install --no-interaction
+      - run: php index.php
+        env:
+          APIALERTS_API_KEY: ${{ secrets.APIALERTS_API_KEY }}

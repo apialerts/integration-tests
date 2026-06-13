@@ -1,0 +1,8 @@
+{
+    "name": "apialerts/apialerts-published-smoke",
+    "description": "Smoke test that installs the published apialerts/apialerts package and sends one event.",
+    "type": "project",
+    "require": {
+        "apialerts/apialerts": "1.0.0"
+    }
+}
