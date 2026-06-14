@@ -14,8 +14,8 @@ The source layer can't catch a bad publish because it never downloads the artifa
 Each CI job checks out an SDK repo and runs its `sample/` script with a shared test API key. No SDK code lives in this repo - the sample logic lives in each SDK repo.
 
 Each sample sends two events:
-1. **Minimal** — `message` only, validates optional fields are truly optional
-2. **Full** — all fields (`message`, `channel`, `event`, `title`, `tags`, `link`, `data`)
+1. **Minimal** - `message` only, validates optional fields are truly optional
+2. **Full** - all fields (`message`, `channel`, `event`, `title`, `tags`, `link`, `data`)
 
 ## Published layer (`published.yml`)
 
@@ -29,7 +29,7 @@ The workflow just installs what the manifest declares and runs it - no `@latest`
 
 ## Secret required
 
-`APIALERTS_API_KEY` — API key for a dedicated test workspace. Set in this repo's GitHub Actions secrets.
+`APIALERTS_API_KEY` - API key for a dedicated test workspace. Set in this repo's GitHub Actions secrets.
 
 ## Adding a new SDK
 
